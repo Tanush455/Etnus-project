@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Files List</title>
+</head>
+<body>
+    <h2>List of HTML Files</h2>
+    <ul id="file-list"></ul>
+
+    <script>
+        const htmlFiles = [
+            "ethnustask1.html",
+            "ethnustask2.html",
+            "ethnustask3.html",
+            "ethnustask4.html",
+            "ethnustask5.html",
+            "index.html",
+            "task1.html",
+            "task2.html",
+            "task3.html",
+            "task4.html",
+            "task5.html",
+            "task6.html",
+            "task7.html"
+        ];
+
+        const ul = document.getElementById("file-list");
+
+        htmlFiles.forEach(file => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = file;
+            a.textContent = file;
+            li.appendChild(a);
+            ul.appendChild(li);
+        });
+    </script>
+</body>
+</html>
