@@ -1,89 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>task 1</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Reverse a Number</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
         }
-
-        .header {
-            background-color: #00bfe6;
-            color: white;
+        .container {
+            text-align: center;
+            background: white;
             padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        .navbar {
-            background-color: #d3d3d3;
-        }
-
-        .navbar a {
-            color: black;
-            font-weight: bold;
-        }
-
-        .content-area {
-            padding: 30px;
-            background-color: #f8f9fa;
-            min-height: 500px;
-        }
-
-        .right-side {
-            background-color: #505050;
-            color: white;
+        input, button {
             padding: 10px;
-            min-height: 650px;
-            text-align: center;
-        }
-
-        .login-signup a {
-            color: #fff;
-            font-weight: bold;
-            margin-left: 15px;
+            margin: 10px;
+            font-size: 16px;
         }
     </style>
 </head>
-
 <body>
-    <!-- Header Section -->
-    <div class="header">
-        Ethnus Layout
+
+    <div class="container">
+        <h2>Reverse a Number</h2>
+        <input type="number" id="numberInput" placeholder="Enter a number">
+        <button onclick="reverseAndDisplay()">Reverse</button>
+        <h3 id="result"></h3>
     </div>
 
-    <!-- Navbar Section -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">HOME</a>
-            <a class="navbar-brand" href="#">MENU</a>
-            <a class="navbar-brand" href="#">ABOUT</a>
-            <a class="navbar-brand" href="#">CONTACT</a>
-            <div class="login-signup ms-auto p-2 rounded">
-                <a href="#">SIGNUP</a>
-                <a href="#">LOGIN</a>
-            </div>
-        </div>
-    </nav>
+    <script>
+        function reverseNumber(num) {
+            const reversed = num.toString().split('').reverse().join('');
+            return parseInt(reversed, 10);
+        }
 
-    <!-- Content Section -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-9 content-area" style="text-align: center;">
-                <p>Write your content here</p>
-            </div>
-            <div class="col-md-3 right-side">
-                <p>This is</p>
-            </div>
-        </div>
-    </div>
+        function reverseAndDisplay() {
+            const input = document.getElementById("numberInput").value;
+            if (input === "") {
+                document.getElementById("result").innerText = "Please enter a number.";
+                return;
+            }
+            const reversedNum = reverseNumber(input);
+            document.getElementById("result").innerText = `Reversed Number: ${reversedNum}`;
+        }
+    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
